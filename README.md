@@ -106,6 +106,7 @@ Results for evaluating `Post` depth and uncertainty maps:
       AUSE |     AURG |     AUSE |     AURG |     AUSE |     AURG |
 &   0.044  &   0.012  &   2.864  &   0.412  &   0.056  &   0.022  \\
 ```
+Minor changes can occur with different versions of the python packages (not greater than 0.01)
 
 ## Contacts
 m [dot] poggi [at] unibo [dot] it
