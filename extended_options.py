@@ -15,7 +15,7 @@ class UncertaintyOptions(MonodepthOptions):
         
         self.parser.add_argument("--eval_uncert", help="if set enables uncertainty evaluation", action="store_true")
         self.parser.add_argument("--log", help="if set, adds the variance output to monodepth2 according to log-likelihood maximization technique", action="store_true")
-        self.parser.add_argument("--lr", help="if set, adds the LR output to monodepth2", action="store_true")
+        self.parser.add_argument("--repr", help="if set, adds the Repr output to monodepth2", action="store_true")
 
         self.parser.add_argument("--dropout", help="if set enables dropout inference", action="store_true")
 

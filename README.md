@@ -71,7 +71,7 @@ Extended options (in addition to Monodepth2 arguments):
 * `--bootstraps N`: loads N models from different trainings
 * `--snapshots N`: loads N models from the same training
 * `--dropout`: enables dropout inference
-* `--lr`: enables lr inference
+* `--repr`: enables repr inference
 * `--log`: enables log-likelihood estimation (for Log and Self variants)
 * `--no_eval`: saves results with custom scale factor (see below), for visualization purpose only
 * `--custom_scale`: custom scale factor

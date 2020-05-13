@@ -20,7 +20,7 @@ python generate_maps.py --data_path $1 --load_weights_folder weights/M/Monodepth
 
 ######## Predictive methods
 # Lr example
-python generate_maps.py --data_path $1 --load_weights_folder weights/M/Monodepth2-Lr/models/weights_19/ --lr --eval_split eigen_benchmark --eval_mono --output_dir experiments/Lr
+python generate_maps.py --data_path $1 --load_weights_folder weights/M/Monodepth2-Lr/models/weights_19/ --repr --eval_split eigen_benchmark --eval_mono --output_dir experiments/Lr
 
 # Log example
 python generate_maps.py --data_path $1 --load_weights_folder weights/M/Monodepth2-Log/models/weights_19/ --log --eval_split eigen_benchmark --eval_mono --output_dir experiments/Log
