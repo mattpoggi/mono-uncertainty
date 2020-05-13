@@ -62,7 +62,7 @@ Then, it exports ground truth depths according to Monodepth2 format.
 
 You can download the following pre-trained models:
 
-* [M](http://www.mediafire.com/file/45oh0877qux6xkd/M.zip/file)
+* [M](https://drive.google.com/open?id=1-ayu6Sh0QAvhL-Gc12AlkUdLlqKG-nTK)
 
 ### Run inference
 
@@ -73,6 +73,7 @@ python generate_maps.py --data_path kitti_data \
                         --load_weights_folder weights/M/Monodepth2-Post/models/weights_19/ \
                         --post_process \
                         --eval_split eigen_benchmark \
+                        --output_dir experiments/Post/ \
                         --eval_mono
 ```
 

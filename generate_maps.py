@@ -217,7 +217,7 @@ def evaluate(opt):
     # saving 16 bit depth and uncertainties
     print("-> Saving 16 bit maps")
     gt_path = os.path.join(splits_dir, opt.eval_split, "gt_depths.npz")
-    gt_depths = np.load(gt_path, fix_imports=True, encoding='latin1')["data"]
+    gt_depths = np.load(gt_path, fix_imports=True, encoding='latin1', allow_pickle=True)["data"]
 
     if not os.path.exists(os.path.join(opt.output_dir, "raw", "disp")):
         os.makedirs(os.path.join(opt.output_dir, "raw", "disp"))
