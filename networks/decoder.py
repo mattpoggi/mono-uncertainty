@@ -65,7 +65,7 @@ class DepthUncertaintyDecoder(nn.Module):
             x = self.convs[("upconv", i, 0)](x)
 
             if self.dropout:
-	        x = F.dropout2d(x, p=self.p, training=True)
+                x = F.dropout2d(x, p=self.p, training=True)
             x = [upsample(x)]
             if self.use_skips and i > 0:
                 x += [input_features[i - 1]]
