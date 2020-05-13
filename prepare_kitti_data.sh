@@ -36,6 +36,7 @@ else
     wget "https://s3.eu-central-1.amazonaws.com/avg-kitti/data_depth_annotated.zip" -P $1
     cd $1
     unzip data_depth_annotated.zip
+    rm data_depth_annotated.zip
 
     # unzip and move gt to proper folders
     seqs=`cat $current/monodepth2/splits/eigen_benchmark/test_files.txt | cut -d' ' -f1 | cut -d'/' -f2 | uniq`    
@@ -48,6 +49,8 @@ else
 	    mv val/$s/* $1/$date/$s/
 	fi
     done
+    rm -r train
+    rm -r val
 
     # return to monodepth2 folder
     cd $current/monodepth2
