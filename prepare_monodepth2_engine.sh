@@ -18,17 +18,17 @@ echo from .pose_decoder import PoseDecoder  >> monodepth2/networks/__init__.py
 echo from .pose_cnn import PoseCNN >> monodepth2/networks/__init__.py 
 
 # create groundtruth files
+cd monodepth2
 if [ -d $1/2011_09_26 ]
 then
     echo Found KITTI dataset at $1
 else
     echo Download KITTI dataset...
-    cd monodepth2
     mkdir $1
     wget -i splits/kitti_archives_to_download.txt -P $1
-    python export_gt_depth.py --data_path $1 --split eigen
-    python export_gt_depth.py --data_path $1 --split eigen_benchmark
-    cd ..
 fi
+python export_gt_depth.py --data_path $1 --split eigen
+python export_gt_depth.py --data_path $1 --split eigen_benchmark
+cd ..
 
 # ready to go!
