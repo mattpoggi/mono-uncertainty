@@ -2,6 +2,8 @@
 
 Demo code of "On the uncertainty of self-supervised monocular depth estimation", [Matteo Poggi](https://vision.disi.unibo.it/~mpoggi/), [Filippo Aleotti](https://filippoaleotti.github.io/website/), [Fabio Tosi](https://vision.disi.unibo.it/~ftosi/) and [Stefano Mattoccia](https://vision.disi.unibo.it/~smatt/), CVPR 2020.
 
+**At the moment, we do not plan to release training code.**
+
 [[Paper]](https://mattpoggi.github.io/assets/papers/poggi2020cvpr.pdf) - [[Poster]](https://mattpoggi.github.io/assets/papers/poggi2020cvpr_poster.pdf) - [[Youtube Video]](https://www.youtube.com/watch?v=bxVPXqf4zt4)
 
 <p align="center"> 
@@ -63,6 +65,8 @@ Then, it exports ground truth depths according to Monodepth2 format.
 You can download the following pre-trained models:
 
 * [M](https://drive.google.com/file/d/1-ayu6Sh0QAvhL-Gc12AlkUdLlqKG-nTK)
+
+S and MS models will be uploaded in the future.
 
 ### Run inference
 
