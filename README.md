@@ -45,15 +45,23 @@ Self-supervised paradigms for monocular depth estimation are very appealing sinc
 Clone Monodepth2 repository and set it up using
 
 ```shell
-sh prepare_monodepth2_engine.sh kitti_data
+sh prepare_monodepth2_engine.sh
 ```
-with `kitti_data` being the datapath to KITTI (if it does not exist, the script will create it and download KITTI archives there). 
-Get pre-trained networks using
 
+Download KITTI raw dataset and accurate ground truth maps
+
+```shell
+sh prepare_kitti_data.sh kitti_data
 ```
-sh download_weights.sh M
-```
-Actually, weights for monocular experiment (M) are available.
+
+with `kitti_data` being the datapath for the raw KITTI dataset.
+The script will check if you already have raw KITTI images and ground truth maps there.
+
+### Pretrained models
+
+You can download the following pre-trained models:
+
+* [M](http://www.mediafire.com/file/45oh0877qux6xkd/M.zip/file)
 
 ### Run inference
 
