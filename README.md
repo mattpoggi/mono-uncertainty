@@ -60,7 +60,11 @@ Actually, weights for monocular experiment (M) are available.
 Launch variants of the following command (see `batch_generate.sh` for a complete list)
 
 ```shell
-python generate_maps.py --data_path kitti_data --load_weights_folder weights/M/Monodepth2-Post/models/weights_19/ --post_process --eval_split eigen_benchmark --eval_mono
+python generate_maps.py --data_path kitti_data \
+                        --load_weights_folder weights/M/Monodepth2-Post/models/weights_19/ \
+                        --post_process \
+                        --eval_split eigen_benchmark \
+                        --eval_mono
 ```
 
 Extended options (in addition to Monodepth2 arguments):
@@ -80,7 +84,11 @@ Results are saved in `--output_dir/raw` and are ready for evaluation. Qualitativ
 Launch the following command
 
 ```shell
-python evaluate.py --ext_disp_to_eval experiments/Post/raw/ --eval_mono --max_depth 80 --eval_split eigen_benchmark --eval_uncert
+python evaluate.py --ext_disp_to_eval experiments/Post/raw/ \
+                   --eval_mono \
+                   --max_depth 80 \
+                   --eval_split eigen_benchmark \
+                   --eval_uncert
 ```
 
 Optional arguments:
@@ -92,10 +100,11 @@ Results for evaluating `Post` depth and uncertainty maps:
 
 ```
    abs_rel |   sq_rel |     rmse | rmse_log |       a1 |       a2 |       a3 |
-&   0.088  &   0.508  &   3.843  &   0.134  &   0.917  &   0.983  &   0.995  \\
+&   0.088  &   0.508  &   3.842  &   0.134  &   0.917  &   0.983  &   0.995  \\
 
+   abs_rel |          |     rmse |          |       a1 |          |
       AUSE |     AURG |     AUSE |     AURG |     AUSE |     AURG |
-&   0.044 &   0.012 &   2.864 &   0.412 &   0.056 &   0.022 \\
+&   0.044  &   0.012  &   2.864  &   0.412  &   0.056  &   0.022  \\
 ```
 
 ## Contacts
@@ -103,4 +112,4 @@ m [dot] poggi [at] unibo [dot] it
 
 ## Acknowledgements
 
-Thanks to Clément Godard for sharing Monodepth2 code
+Thanks to Niantic and Clément Godard for sharing Monodepth2 code
