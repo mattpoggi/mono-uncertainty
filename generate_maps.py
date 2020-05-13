@@ -47,12 +47,12 @@ def evaluate(opt):
     opt.batch_size = 1
 
     assert sum((opt.eval_mono, opt.eval_stereo, opt.no_eval)) == 1, "Please choose mono or stereo evaluation by setting either --eval_mono, --eval_stereo, --custom_run"
-    assert sum((opt.log, opt.lr)) < 2, "Please select only one between LR and LOG by setting --lr or --log"
+    assert sum((opt.log, opt.repr)) < 2, "Please select only one between LR and LOG by setting --repr or --log"
     assert opt.bootstraps == 1 or opt.snapshots == 1, "Please set only one of --bootstraps or --snapshots to be major than 1"
     
     # get the number of networks
     nets = max(opt.bootstraps,opt.snapshots)
-    do_uncert = (opt.log or opt.lr or opt.dropout or opt.post_process or opt.bootstraps > 1 or opt.snapshots > 1)
+    do_uncert = (opt.log or opt.repr or opt.dropout or opt.post_process or opt.bootstraps > 1 or opt.snapshots > 1)
 
     print("-> Beginning inference...")
 
@@ -101,7 +101,7 @@ def evaluate(opt):
 
         # load multiple encoders and decoders 
        	encoder = [legacy.ResnetEncoder(opt.num_layers, False) for i in range(nets)]
-        depth_decoder = [networks.DepthUncertaintyDecoder(encoder[i].num_ch_enc, num_output_channels=1, uncert=(opt.log or opt.lr), dropout=opt.dropout) for i in range(nets)]
+        depth_decoder = [networks.DepthUncertaintyDecoder(encoder[i].num_ch_enc, num_output_channels=1, uncert=(opt.log or opt.repr), dropout=opt.dropout) for i in range(nets)]
 
         model_dict = [encoder[i].state_dict() for i in range(nets)]
         for i in range(nets):
@@ -116,7 +116,7 @@ def evaluate(opt):
     
         # load a single encoder and decoder
        	encoder = legacy.ResnetEncoder(opt.num_layers, False)
-        depth_decoder = networks.DepthUncertaintyDecoder(encoder.num_ch_enc, num_output_channels=1, uncert=(opt.log or opt.lr), dropout=opt.dropout)
+        depth_decoder = networks.DepthUncertaintyDecoder(encoder.num_ch_enc, num_output_channels=1, uncert=(opt.log or opt.repr), dropout=opt.dropout)
         model_dict = encoder.state_dict()
         encoder.load_state_dict({k: v for k, v in encoder_dict.items() if k in model_dict})
         depth_decoder.load_state_dict(torch.load(decoder_path))
@@ -190,7 +190,7 @@ def evaluate(opt):
                 
                     # log-likelihood maximization
                     pred_uncert = torch.exp(output[("uncert", 0)]).cpu()[:, 0].numpy()
-                elif opt.lr:
+                elif opt.repr:
                 
                     # learned reprojection
                     pred_uncert = (output[("uncert", 0)]).cpu()[:, 0].numpy()
@@ -207,7 +207,7 @@ def evaluate(opt):
             pred_disps.append(pred_disp)
 
             # uncertainty normalization
-            if opt.log or opt.lr or opt.dropout or nets > 1:	
+            if opt.log or opt.repr or opt.dropout or nets > 1:	
                 pred_uncert = (pred_uncert - np.min(pred_uncert)) / (np.max(pred_uncert) - np.min(pred_uncert))
                 pred_uncerts.append(pred_uncert)
     pred_disps = np.concatenate(pred_disps)
