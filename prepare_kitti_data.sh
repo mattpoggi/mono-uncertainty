@@ -31,6 +31,7 @@ if [ -d $1/2011_09_26/*/proj_depth ]
 then
     echo Found KITTI accurate ground truth at $1
 else
+    echo Download KITTI accurate ground truth...
 
     # download accurate ground truth, unzip and move inside KITTI folders
     wget "https://s3.eu-central-1.amazonaws.com/avg-kitti/data_depth_annotated.zip" -P $1
