@@ -41,7 +41,7 @@ else
 
     # unzip and move gt to proper folders
     seqs=`cat $current/monodepth2/splits/eigen_benchmark/test_files.txt | cut -d' ' -f1 | cut -d'/' -f2 | uniq`    
-    for s in seqs; do
+    for s in $seqs; do
 	date=`echo $s | cut -d'_' -f1-3`
         if [ -d train/$s ];
 	then
