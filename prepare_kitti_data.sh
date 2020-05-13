@@ -27,7 +27,7 @@ else
 fi
 
 # check if KITTI accurate ground truth has already been downloaded
-if [ -d $1/2011_09_26/*/proj_depth ]
+if [ -d $1/2011_09_26/2011_09_26_drive_0002_sync/proj_depth ]
 then
     echo Found KITTI accurate ground truth at $1
 else
@@ -52,12 +52,10 @@ else
     done
     rm -r train
     rm -r val
-
-    # return to monodepth2 folder
-    cd $current/monodepth2
 fi
 
 # export ground truth
+cd $current/monodepth2
 python export_gt_depth.py --data_path $1 --split eigen_benchmark
 
 # ready to go!
