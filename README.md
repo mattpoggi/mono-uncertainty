@@ -37,7 +37,7 @@ Self-supervised paradigms for monocular depth estimation are very appealing sinc
 ### Requirements
 
 * `PyTorch 0.4` 
-* `python packages` such as opencv, PIL, numpy, matplotlib
+* `python packages` such as opencv, PIL, numpy, matplotlib (see `requirements.txt`)
 * `Monodepth2` framework (https://github.com/nianticlabs/monodepth2)
 
 ### Getting started
