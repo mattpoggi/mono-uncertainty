@@ -4,6 +4,7 @@ touch monodepth2/__init__.py
 
 # small fix to kitti dataloader to work from root directory
 sed -i 's/ kitti_utils/ ..kitti_utils/g' monodepth2/datasets/kitti_dataset.py
+sed -i 's/MonodepthOptions/MonodepthOptions(object)/g' monodepth2/options.py
 
 # change __init__ file in monodepth2/network to exclude depth network
 rm monodepth2/networks/__init__.py
