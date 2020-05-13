@@ -2,10 +2,11 @@
 
 Demo code of "On the uncertainty of self-supervised monocular depth estimation", [Matteo Poggi](https://vision.disi.unibo.it/~mpoggi/), [Filippo Aleotti](https://filippoaleotti.github.io/website/), [Fabio Tosi](https://vision.disi.unibo.it/~ftosi/) and [Stefano Mattoccia](https://vision.disi.unibo.it/~smatt/), CVPR 2020.
 
+[[Paper]](https://mattpoggi.github.io/assets/papers/poggi2020cvpr.pdf) - [[Poster]](https://mattpoggi.github.io/assets/papers/poggi2020cvpr_poster.pdf) - [[Youtube Video]](https://www.youtube.com/watch?v=bxVPXqf4zt4)
+
 <p align="center"> 
 <img src=https://mattpoggi.github.io/assets/img/uncertainty/poggi2020cvpr.gif>
 </p>
-[[Paper]](https://mattpoggi.github.io/assets/papers/poggi2020cvpr.pdf) - [[Poster]](https://mattpoggi.github.io/assets/papers/poggi2020cvpr_poster.pdf) - [[Youtube Video]](https://www.youtube.com/watch?v=bxVPXqf4zt4)
 
 ## Citation
 ```shell
