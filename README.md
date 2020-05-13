@@ -60,7 +60,7 @@ Actually, weights for monocular experiment (M) are available.
 Launch variants of the following command (see `batch_generate.sh` for a complete list)
 
 ```shell
-python generate_maps.py --data_path kitti_data --load_weights_folder weights/M/Monodepth2-Self/models/weights_19/ --log --eval_split eigen_benchmark --eval_mono
+python generate_maps.py --data_path kitti_data --load_weights_folder weights/M/Monodepth2-Post/models/weights_19/ --post_process --eval_split eigen_benchmark --eval_mono
 ```
 
 Extended options (in addition to Monodepth2 arguments):
