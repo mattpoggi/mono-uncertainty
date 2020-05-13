@@ -55,7 +55,7 @@ sh prepare_kitti_data.sh kitti_data
 ```
 
 with `kitti_data` being the datapath for the raw KITTI dataset.
-The script will check if you already have raw KITTI images and ground truth maps there.
+The script checks if you already have raw KITTI images and ground truth maps there.
 Then, it exports ground truth depths according to Monodepth2 format.
 
 ### Pretrained models
