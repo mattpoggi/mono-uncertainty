@@ -62,7 +62,7 @@ Then, it exports ground truth depths according to Monodepth2 format.
 
 You can download the following pre-trained models:
 
-* [M](https://drive.google.com/open?id=1-ayu6Sh0QAvhL-Gc12AlkUdLlqKG-nTK)
+* [M](https://drive.google.com/file/d/1-ayu6Sh0QAvhL-Gc12AlkUdLlqKG-nTK)
 
 ### Run inference
 
