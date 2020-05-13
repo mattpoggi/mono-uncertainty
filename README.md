@@ -4,8 +4,8 @@ Demo code of "On the uncertainty of self-supervised monocular depth estimation",
 
 <p align="center"> 
 <img src=https://mattpoggi.github.io/assets/img/uncertainty/poggi2020cvpr.gif>
-[[Paper]](https://mattpoggi.github.io/assets/papers/poggi2020cvpr.pdf) - [[Poster]](https://mattpoggi.github.io/assets/papers/poggi2020cvpr_poster.pdf) - [[Youtube Video]](https://www.youtube.com/watch?v=bxVPXqf4zt4)
 </p>
+[[Paper]](https://mattpoggi.github.io/assets/papers/poggi2020cvpr.pdf) - [[Poster]](https://mattpoggi.github.io/assets/papers/poggi2020cvpr_poster.pdf) - [[Youtube Video]](https://www.youtube.com/watch?v=bxVPXqf4zt4)
 
 ## Citation
 ```shell
