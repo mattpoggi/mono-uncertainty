@@ -26,9 +26,9 @@ class DepthUncertaintyDecoder(nn.Module):
         self.upsample_mode = 'nearest'
         self.scales = scales
 
-	self.p = 0.2
-	self.uncert = uncert
-	self.dropout = dropout
+        self.p = 0.2
+        self.uncert = uncert
+        self.dropout = dropout
 
         self.num_ch_enc = num_ch_enc
         self.num_ch_dec = np.array([16, 32, 64, 128, 256])
@@ -50,8 +50,8 @@ class DepthUncertaintyDecoder(nn.Module):
 
         for s in self.scales:
             self.convs[("dispconv", s)] = Conv3x3(self.num_ch_dec[s], self.num_output_channels)
-	    if self.uncert:
-	            self.convs[("uncertconv", s)] = Conv3x3(self.num_ch_dec[s], self.num_output_channels)
+            if self.uncert:
+                self.convs[("uncertconv", s)] = Conv3x3(self.num_ch_dec[s], self.num_output_channels)
 
         self.decoder = nn.ModuleList(list(self.convs.values()))
         self.sigmoid = nn.Sigmoid()
@@ -64,8 +64,8 @@ class DepthUncertaintyDecoder(nn.Module):
         for i in range(4, -1, -1):
             x = self.convs[("upconv", i, 0)](x)
 
-	    if self.dropout:
-		    x = F.dropout2d(x, p=self.p, training=True)
+            if self.dropout:
+	        x = F.dropout2d(x, p=self.p, training=True)
             x = [upsample(x)]
             if self.use_skips and i > 0:
                 x += [input_features[i - 1]]
@@ -73,15 +73,15 @@ class DepthUncertaintyDecoder(nn.Module):
 
             x = self.convs[("upconv", i, 1)](x)
 
-	    if self.dropout:
-		    x = F.dropout2d(x, p=self.p, training=True)
+            if self.dropout:
+                x = F.dropout2d(x, p=self.p, training=True)
             if i in self.scales:
-		self.outputs[("dispconv", i)] = self.convs[("dispconv", i)]
-		disps = self.convs[("dispconv", i)](x)
+                self.outputs[("dispconv", i)] = self.convs[("dispconv", i)]
+                disps = self.convs[("dispconv", i)](x)
                 self.outputs[("disp", i)] = self.sigmoid(disps)
 
-		if self.uncert:
-			uncerts = self.convs[("uncertconv", i)](x)
-		        self.outputs[("uncert", i)] = uncerts
+                if self.uncert:
+                    uncerts = self.convs[("uncertconv", i)](x)
+                    self.outputs[("uncert", i)] = uncerts
 
         return self.outputs
