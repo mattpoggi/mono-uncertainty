@@ -10,5 +10,5 @@ then
 fi
 
 mkdir -p weights/$1
-wget https://http://vision.disi.unibo.it/~mpoggi/mono-uncertainty/$1.zip
+wget https://www.mediafire.com/file/45oh0877qux6xkd/$1.zip
 unzip weights/$1.zip weights/$1/

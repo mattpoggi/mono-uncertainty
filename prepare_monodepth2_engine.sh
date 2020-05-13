@@ -28,7 +28,7 @@ else
     wget -i splits/kitti_archives_to_download.txt -P $1
 fi
 python export_gt_depth.py --data_path $1 --split eigen
-python export_gt_depth.py --data_path $1 --split eigen_benchmark
+#python export_gt_depth.py --data_path $1 --split eigen_benchmark
 cd ..
 
 # ready to go!
