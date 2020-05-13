@@ -58,7 +58,6 @@ else
 fi
 
 # export ground truth
-python export_gt_depth.py --data_path $1 --split eigen
 python export_gt_depth.py --data_path $1 --split eigen_benchmark
 
 # ready to go!
