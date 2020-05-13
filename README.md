@@ -86,6 +86,18 @@ python evaluate.py --ext_disp_to_eval experiments/Post/raw/ --eval_mono --max_de
 Optional arguments:
 * `--eval_uncert`: evaluates estimated uncertainty
 
+### Results
+
+Results for evaluating `Post` depth and uncertainty maps:
+
+```
+   abs_rel |   sq_rel |     rmse | rmse_log |       a1 |       a2 |       a3 |
+&   0.088  &   0.508  &   3.843  &   0.134  &   0.917  &   0.983  &   0.995  \\
+
+      AUSE |     AURG |     AUSE |     AURG |     AUSE |     AURG |
+&   0.044 &   0.012 &   2.864 &   0.412 &   0.056 &   0.022 \\
+```
+
 ## Contacts
 m [dot] poggi [at] unibo [dot] it
 
