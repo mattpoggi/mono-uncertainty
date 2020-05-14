@@ -91,7 +91,7 @@ Extended options (in addition to Monodepth2 arguments):
 * `--custom_scale`: custom scale factor
 * `--qual`: save qualitative maps for visualization
 
-Results are saved in `--output_dir/raw` and are ready for evaluation. Qualitatives are save in `--output_dir/qual`.
+Results are saved in `--output_dir/raw` and are ready for evaluation. Qualitatives are saved in `--output_dir/qual`.
 
 ### Run evaluation
 
