@@ -80,6 +80,7 @@ python generate_maps.py --data_path kitti_data \
                         --output_dir experiments/Post/ \
                         --eval_mono
 ```
+It assumes you have downloaded pre-trained models and placed them in the `weights` folder.
 
 Extended options (in addition to Monodepth2 arguments):
 * `--bootstraps N`: loads N models from different trainings
