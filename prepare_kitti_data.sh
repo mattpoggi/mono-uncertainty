@@ -23,7 +23,7 @@
 
 if [ "$#" -eq  "0" ]
 then
-    echo Usage: prepare_monodepth2_engine.sh kitti_datapath
+    echo Usage: prepare_kitti_data.sh kitti_datapath
     exit
 fi
 
