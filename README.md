@@ -65,8 +65,8 @@ Then, it exports ground truth depths according to Monodepth2 format.
 You can download the following pre-trained models:
 
 * [M](https://drive.google.com/file/d/1-ayu6Sh0QAvhL-Gc12AlkUdLlqKG-nTK)
-
-S and MS models will be uploaded in the future.
+* [S](https://drive.google.com/file/d/1Vh_bAFyLOrOG47UV87UwNXtztL0SPc7q)
+* [MS](https://drive.google.com/file/d/13QPKltWFmrgPMW9ed5Zp35ne_ykErxgy) 
 
 ### Run inference
 
@@ -80,7 +80,7 @@ python generate_maps.py --data_path kitti_data \
                         --output_dir experiments/Post/ \
                         --eval_mono
 ```
-It assumes you have downloaded pre-trained models and placed them in the `weights` folder.
+It assumes you have downloaded pre-trained models and placed them in the `weights` folder. Use `--eval_stereo` for S and MS models.
 
 Extended options (in addition to Monodepth2 arguments):
 * `--bootstraps N`: loads N models from different trainings
@@ -122,6 +122,11 @@ Results for evaluating `Post` depth and uncertainty maps:
 &   0.044  &   0.012  &   2.864  &   0.412  &   0.056  &   0.022  \\
 ```
 Minor changes can occur with different versions of the python packages (not greater than 0.01)
+
+#### Minor differences from the paper
+* Results from Drop models fluctuate 
+* RMSE for Monodepth2 (S) is 3.868 (Table 2 says 3.942, that is a wrong copy-paste from Table 1)
+* The original Monodepth2-Snap (MS) weights went lost :sob: we provide new weights giving almost identical results
 
 ## Contacts
 m [dot] poggi [at] unibo [dot] it
