@@ -174,7 +174,7 @@ def evaluate(opt):
                     output =  depth_decoder[i](encoder[i](input_color))
                     disps_distribution.append( torch.unsqueeze(output[("disp", 0)],0) )
                     if opt.log:
-                        uncerts_distribution.append( torch.unsqueeze(output[("uncert", 0)],0) )
+                        uncerts_distribution.append( torch.unsqueeze( torch.exp(output[("uncert", 0)]), 0) )
 
                 disps_distribution = torch.cat(disps_distribution, 0)
                 if opt.log:
